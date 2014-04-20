@@ -10,7 +10,7 @@
     </head>
     <body ng-controller='passportCtrl'>
         <div class="app">
-            {{serverResponse}}
+            TEST ( {{serverResponse}} )
         </div>
         <img style='position:absolute;top:0px;left:0px;width:100%;height:100%' src='img/passport_background.JPG'>
         <script type="text/javascript" src="cordova.js"></script>
@@ -24,12 +24,14 @@
                         $scope.serverResponse = {};
 
                         document.addEventListener('load', function(){       $scope.deviceLoading=true;}, false);
-                        document.addEventListener('deviceready', function(){$scope.deviceReady=true}, false);
-                        document.addEventListener('offline', function(){    $scope.deviceOnline=false}, false);
-                        document.addEventListener('online', function(){     $scope.deviceOnline=true}, false);
+                        document.addEventListener('deviceready', function(){$scope.deviceReady=true;  }, false);
+                        document.addEventListener('offline', function(){    $scope.deviceOnline=false;}, false);
+                        document.addEventListener('online', function(){     $scope.deviceOnline=true; }, false);
 
                         $scope.$watch('deviceReady',function(){
+                            $scope.serverResponse = 'ready';
                             if ($scope.deviceOnline){
+
                                 var url = 'http://passport-api.herokuapp.com/users';
                                 $http.get(url)
                                     .success(function(results, status, headers, config) {
