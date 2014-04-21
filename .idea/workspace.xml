@@ -7,7 +7,7 @@
     </list>
     <ignored path="passport.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398044728871" ignored="false" />
+    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398045680489" ignored="false" />
     <file path="/Dummy.txt" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023220303" ignored="false" />
     <file path="/index.css" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1397787815932" ignored="false" />
     <file path="C:/VCS/RESTtest/server.js" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023534766" ignored="false" />
@@ -94,7 +94,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="68" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.77175283">
+            <state line="48" column="75" selection-start="2400" selection-end="2400" vertical-scroll-proportion="0.74274904">
               <folding />
             </state>
           </provider>
@@ -638,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="6" selection-start="1940" selection-end="1940" vertical-scroll-proportion="0.0">
@@ -652,9 +645,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="68" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.77175283">
+        <state line="48" column="75" selection-start="2400" selection-end="2400" vertical-scroll-proportion="0.74274904">
           <folding />
         </state>
       </provider>

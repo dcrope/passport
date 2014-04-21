@@ -25,9 +25,10 @@
 
                             var self = this;
                             this.ready = d.promise;
-                            window.addEventListener('deviceready', function() {
+                            document.addEventListener('load', function() {
                                 resolved = true;
                                 d.resolve(window.cordova);
+                                alert('cordova set');
                             });
 
                             // Check to make sure we didn't miss the
@@ -43,16 +44,16 @@
                 .controller('passportCtrl', function($scope, $http, CordovaService){
                         $scope.deviceReady=false;
                         $scope.serverResponse={loading:'Loading...'};
-                    CordovaService.ready.then(function(){
+                    //CordovaService.ready.then(function(){
                         $scope.deviceReady=true;
-                        $http.get(url)
+                        $http.get('http://passport-api.herokuapp.com/users')
                             .success(function(results, status, headers, config) {
                                 $scope.serverResponse = results;
                             }).error(function(results, status) {
                                 // called asynchronously if server returns response with error status.
                                 $scope.serverResponse = results;
                             });
-                    })
+                    //})
 
                 });
         </script>
