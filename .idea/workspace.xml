@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01ce593a-b96d-469c-8ae5-8767b8bfecaa" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\daniel.beatty\Documents\GitHub\passport\passport.zip" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="passport.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398037702247" ignored="false" />
+    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398041027166" ignored="false" />
     <file path="/Dummy.txt" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023220303" ignored="false" />
     <file path="/index.css" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1397787815932" ignored="false" />
     <file path="C:/VCS/RESTtest/server.js" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023534766" ignored="false" />
@@ -93,7 +94,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="679" selection-end="679" vertical-scroll-proportion="0.2196602">
+            <state line="14" column="44" selection-start="812" selection-end="812" vertical-scroll-proportion="0.2815534">
               <folding />
             </state>
           </provider>
@@ -655,7 +656,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="679" selection-end="679" vertical-scroll-proportion="0.2196602">
+        <state line="14" column="44" selection-start="812" selection-end="812" vertical-scroll-proportion="0.2815534">
           <folding />
         </state>
       </provider>
