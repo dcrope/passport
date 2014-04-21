@@ -7,7 +7,7 @@
     </list>
     <ignored path="passport.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398041027166" ignored="false" />
+    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398043071343" ignored="false" />
     <file path="/Dummy.txt" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023220303" ignored="false" />
     <file path="/index.css" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1397787815932" ignored="false" />
     <file path="C:/VCS/RESTtest/server.js" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023534766" ignored="false" />
@@ -94,7 +94,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="44" selection-start="812" selection-end="812" vertical-scroll-proportion="0.2815534">
+            <state line="15" column="33" selection-start="823" selection-end="823" vertical-scroll-proportion="0.3215637">
               <folding />
             </state>
           </provider>
@@ -152,10 +152,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -465,7 +463,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <frame x="0" y="0" width="960" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -487,7 +485,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1189968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24888393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -656,7 +654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="44" selection-start="812" selection-end="812" vertical-scroll-proportion="0.2815534">
+        <state line="15" column="33" selection-start="823" selection-end="823" vertical-scroll-proportion="0.3215637">
           <folding />
         </state>
       </provider>

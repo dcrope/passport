@@ -9,39 +9,44 @@
         <title>Hello World</title>
     </head>
     <body ng-controller='passportCtrl'>
-        TEST ( {{serverResponse}} )
         <br>device ready: {{deviceReady}}
         <br>device loading: {{deviceLoading}}
         <br>device online:  {{deviceOnline}}
+        <hr>
+        Data: {{serverResponse | json}}
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript">
             angular.module('passport',[])
                 .controller('passportCtrl', function($scope, $http){
-                        $scope.deviceReady = false;
-                        $scope.deviceLoading = false;
-                        $scope.deviceOnline = false;
-                        $scope.serverResponse = {};
+                    $scope.deviceReady = false;
+                    $scope.deviceLoading = false;
+                    $scope.deviceOnline = false;
+                    $scope.serverResponse = {};
 
-                        document.addEventListener('load', function(){       $scope.deviceLoading=true;}, false);
-                        document.addEventListener('deviceready', function(){$scope.deviceReady=true;  }, false);
-                        document.addEventListener('offline', function(){    $scope.deviceOnline=false;}, false);
-                        document.addEventListener('online', function(){     $scope.deviceOnline=true; }, false);
+                    document.addEventListener('load', deviceLoading(true), false);
+                    document.addEventListener('deviceready', deviceReady(true), false);
+                    document.addEventListener('offline', deviceOnline(false), false);
+                    document.addEventListener('online', deviceOnline(true), false);
+                    function deviceLoading(b){ $scope.deviceLoading=b; }
+                    function deviceReady(b){   $scope.deviceReady=b; }
+                    function deviceOnline(b){   $scope.deviceOnline=b; }
 
-                        $scope.$watch('deviceReady',function(){
-                            $scope.serverResponse = 'ready';
-                            if ($scope.deviceOnline){
+                    $scope.$watch('deviceReady',function(){
+                        $scope.serverResponse = 'ready';
+                        if ($scope.deviceOnline){
 
-                                var url = 'http://passport-api.herokuapp.com/users';
-                                $http.get(url)
-                                    .success(function(results, status, headers, config) {
-                                        $scope.serverResponse = results;
-                                    }).error(function(results, status) {
-                                        // called asynchronously if server returns response with error status.
-                                        $scope.serverResponse = results;
-                                    });
-                            }
-                        })
+                            var url = 'http://passport-api.herokuapp.com/users';
+                            $http.get(url)
+                                .success(function(results, status, headers, config) {
+                                    $scope.serverResponse = results;
+                                }).error(function(results, status) {
+                                    // called asynchronously if server returns response with error status.
+                                    $scope.serverResponse = results;
+                                });
+                        }
+                    })
 
                 });
         </script>
