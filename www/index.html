@@ -43,9 +43,14 @@
             angular.module('passport',['fsCordova'])
                 .controller('passportCtrl', function($scope, $http, CordovaService){
                         $scope.deviceReady=false;
-                        $scope.serverResponse={loading:'Loading...'};
-                    //CordovaService.ready.then(function(){
-                        $scope.deviceReady=true;
+                        $scope.serviceResponse={};
+
+                        document.addEventListener("deviceready", onDeviceReady, false);
+                        function onDeviceReady(){
+                            $scope.deviceReady=true;
+                        };
+
+
                         $http.get('http://passport-api.herokuapp.com/users')
                             .success(function(results, status, headers, config) {
                                 $scope.serverResponse = results;
@@ -53,8 +58,6 @@
                                 // called asynchronously if server returns response with error status.
                                 $scope.serverResponse = results;
                             });
-                    //})
-
                 });
         </script>
     </body>
