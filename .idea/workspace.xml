@@ -7,7 +7,7 @@
     </list>
     <ignored path="passport.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398047916573" ignored="false" />
+    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398048148761" ignored="false" />
     <file path="/Dummy.txt" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023220303" ignored="false" />
     <file path="/index.css" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1397787815932" ignored="false" />
     <file path="C:/VCS/RESTtest/server.js" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023534766" ignored="false" />
@@ -94,7 +94,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="34" selection-start="750" selection-end="750" vertical-scroll-proportion="0.27868852">
+            <state line="8" column="23" selection-start="580" selection-end="580" vertical-scroll-proportion="0.17150062">
               <folding />
             </state>
           </provider>
@@ -654,7 +654,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="750" selection-end="750" vertical-scroll-proportion="0.27868852">
+        <state line="8" column="23" selection-start="580" selection-end="580" vertical-scroll-proportion="0.17150062">
           <folding />
         </state>
       </provider>
