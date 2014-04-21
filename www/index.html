@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='passport'>
+<html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -9,46 +9,20 @@
         <title>Hello World</title>
     </head>
     <body ng-controller='passportCtrl'>
-        <br>device ready: {{deviceReady}}
+        <br>device ready: {{deviceReady}}/{{deviceLoaded}}
         <hr>
         Data: {{serverResponse | json}}
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript">
-            angular.module('fsCordova', [])
-                    .service('CordovaService', ['$document', '$q',
-                        function($document, $q) {
-
-                            var d = $q.defer(),
-                                    resolved = false;
-
-                            var self = this;
-                            this.ready = d.promise;
-                            document.addEventListener('load', function() {
-                                resolved = true;
-                                d.resolve(window.cordova);
-                                alert('cordova set');
-                            });
-
-                            // Check to make sure we didn't miss the
-                            // event (just in case)
-                            setTimeout(function() {
-                                if (!resolved) {
-                                    if (window.cordova) d.resolve(window.cordova);
-                                }
-                            }, 3000);
-                        }]);
 
             angular.module('passport',['fsCordova'])
                 .controller('passportCtrl', function($scope, $http, CordovaService){
                         $scope.deviceReady=false;
                         $scope.serviceResponse={};
 
-                        document.addEventListener("deviceready", onDeviceReady, false);
-                        function onDeviceReady(){
-                            $scope.deviceReady=true;
-                        };
+
 
 
                         $http.get('http://passport-api.herokuapp.com/users')
@@ -59,6 +33,11 @@
                                 $scope.serverResponse = results;
                             });
                 });
+            var onDeviceReady = function() {
+                alert('bootstrap');
+                angular.bootstrap( document, ['passport']);
+            };
+            window.addEventListener('deviceready', onDeviceReady);
         </script>
     </body>
 </html>

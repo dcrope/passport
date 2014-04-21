@@ -7,7 +7,7 @@
     </list>
     <ignored path="passport.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398046167395" ignored="false" />
+    <file path="/index.html" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398047174630" ignored="false" />
     <file path="/Dummy.txt" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023220303" ignored="false" />
     <file path="/index.css" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1397787815932" ignored="false" />
     <file path="C:/VCS/RESTtest/server.js" changelist="01ce593a-b96d-469c-8ae5-8767b8bfecaa" time="1398023534766" ignored="false" />
@@ -94,10 +94,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="93" selection-start="918" selection-end="918" vertical-scroll-proportion="0.36443883">
-              <folding>
-                <element signature="e#1010#1954#0" expanded="false" />
-              </folding>
+            <state line="39" column="48" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.8360656">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -572,9 +570,7 @@
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="82" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1010#1954#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -607,9 +603,7 @@
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="82" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1010#1954#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -660,10 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="93" selection-start="918" selection-end="918" vertical-scroll-proportion="0.36443883">
-          <folding>
-            <element signature="e#1010#1954#0" expanded="false" />
-          </folding>
+        <state line="39" column="48" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.8360656">
+          <folding />
         </state>
       </provider>
     </entry>
