@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='passport'>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -11,14 +11,15 @@
     <body ng-controller='passportCtrl'>
         <br>device ready: {{deviceReady}}/{{deviceLoaded}}
         <hr>
-        Data: {{serverResponse | json}}
+        UserName: {{serverResponse[0].fetname}}
+
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript">
 
-            angular.module('passport',['fsCordova'])
-                .controller('passportCtrl', function($scope, $http, CordovaService){
+            angular.module('passport',[])
+                .controller('passportCtrl', function($scope, $http){
                         $scope.deviceReady=false;
                         $scope.serviceResponse={};
 
@@ -33,11 +34,6 @@
                                 $scope.serverResponse = results;
                             });
                 });
-            var onDeviceReady = function() {
-                alert('bootstrap');
-                angular.bootstrap( document, ['passport']);
-            };
-            window.addEventListener('deviceready', onDeviceReady);
         </script>
     </body>
 </html>
