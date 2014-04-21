@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='passport'>
+<html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -49,6 +49,9 @@
                     })
 
                 });
+            angular.element(window).ready(function(){
+                angular.bootstrap(document,['passport']);
+            });
         </script>
     </body>
 </html>
