@@ -33,7 +33,7 @@
         </style>
     </head>
     <body ng-controller='passportCtrl'>
-        <div class='header'></div>
+        <div class='header'>header</div>
         <div ng-view class='mainContent'></div>
         <div class='passportControls'>
 
@@ -84,16 +84,16 @@
                 })
                 .config(function($routeProvider,$locationProvider){
                     $routeProvider
-                            .when('/',{
+                            .when('/index.html',{
                                 templateUrl:'pages/home.html'
                             })
-                            .when('/skill',{
+                            .when('/skill.html',{
                                 templateUrl:'pages/skill.html'
                             })
                             .otherwise({
                                 templateUrl:'pages/home.html'
                             })
-                    $locationProvider.html5Mode(true);
+                    //$locationProvider.html5Mode(true);
                 });
 
         </script>
