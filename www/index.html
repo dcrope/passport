@@ -34,7 +34,18 @@
     </head>
     <body ng-controller='passportCtrl'>
         <div class='header'>header</div>
-        <div ng-view class='mainContent'></div>
+        <!-- <div ng-view class='mainContent'></div> -->
+        <div ng-repeat="skill in serverResponse">
+            <table>
+                <tr>
+                    <td rowspan='2'><img src='img/iblank.png'/></td>
+                    <td class='skillName'>{{skill.name}}</td>
+                </tr>
+                <tr>
+                    <td><span ng-show='user.info.admin'>edit skill</span> <span>Started</span></td>
+                </tr>
+            </table>
+        </div>
         <div class='passportControls'>
 
         </div>
@@ -82,6 +93,7 @@
                             });
                         */
                 })
+                    /*
                 .config(function($routeProvider,$locationProvider){
                     $routeProvider
                             .when('/index.html',{
@@ -95,7 +107,7 @@
                             })
                     //$locationProvider.html5Mode(true);
                 });
-
+                */
         </script>
     </body>
 </html>
