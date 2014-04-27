@@ -1,11 +1,19 @@
-<div ng-repeat="skill in serverResponse"'>
-<table>
-    <tr>
-        <td rowspan='2'><img src='img/iblank.png'/></td>
-        <td class='skillName'>{{skill.name}}</td>
-    </tr>
-    <tr>
-        <td><span ng-show='user.info.admin'>edit skill</span> <span>Started</span></td>
-    </tr>
-</table>
-</div>
+<ons-page class="center">
+    <h1>Page 1</h1>
+
+    <ons-button
+            ng-click="ons.navigator.pushPage('new_page.html')">
+        Push New Page
+    </ons-button>
+    <div ng-controller="passportCtrl" ng-repeat="skill in serverResponse">
+        <table>
+            <tr>
+                <td rowspan='2'><img src='img/iblank.png'/></td>
+                <td class='skillName'>{{skill.name}}</td>
+            </tr>
+            <tr>
+                <td><span ng-show='user.info.admin'>edit skill</span> <span>Started</span></td>
+            </tr>
+        </table>
+    </div>
+</ons-page>
