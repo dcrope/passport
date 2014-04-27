@@ -7,25 +7,72 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Passport</title>
+        <style>
+            .skillEntry{
+
+            }
+            .skillName{
+
+            }
+            .skillDescription{
+
+            }
+            .passportControls{
+                position:absolute;
+                height:20px;
+                width:100%;
+                background-color:black;
+                bottom:0px;
+            }
+            .header{
+
+            }
+            .mainContent{
+                overflow:hidden;
+            }
+        </style>
     </head>
     <body ng-controller='passportCtrl'>
-        <br>device ready: {{deviceReady}}/{{deviceLoaded}}
-        <hr>
-        UserName: {{serverResponse[0].fetname}}
+        <div class='header'></div>
+        <div ng-view class='mainContent'></div>
+        <div class='passportControls'>
 
+        </div>
 
+        <!-- All needed Scripts -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
         <script type="text/javascript">
-
-            angular.module('passport',[])
+            angular.module('passport',['ngRoute'])
                 .controller('passportCtrl', function($scope, $http){
                         $scope.deviceReady=false;
                         $scope.serviceResponse={};
+                        $scope.user={username:'greeneyedevil',password:'test'};
+                        $scope.user.info={}
 
 
+                        $http({ method:'GET',
+                            //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
+                            url:'http://localhost:3000/user?username='+$scope.user.username+'&password='+$scope.user.password
+                        })
+                        .success(function(results, status, headers, config) {
+                                    $scope.user.info = results[0];
+                        }).error(function(results, status) {
+                                    // called asynchronously if server returns response with error status.
 
-
+                                });
+                        $http({ method:'GET',
+                            //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
+                            url:'http://localhost:3000/skillList?username='+$scope.user.username+'&password='+$scope.user.password
+                        })
+                        .success(function(results, status, headers, config) {
+                            $scope.serverResponse = results;
+                        }).error(function(results, status) {
+                            // called asynchronously if server returns response with error status.
+                            $scope.serverResponse = results;
+                        });
+                        /*
                         $http.get('http://passport-api.herokuapp.com/users')
                             .success(function(results, status, headers, config) {
                                 $scope.serverResponse = results;
@@ -33,7 +80,22 @@
                                 // called asynchronously if server returns response with error status.
                                 $scope.serverResponse = results;
                             });
+                        */
+                })
+                .config(function($routeProvider,$locationProvider){
+                    $routeProvider
+                            .when('/',{
+                                templateUrl:'pages/home.html'
+                            })
+                            .when('/skill',{
+                                templateUrl:'pages/skill.html'
+                            })
+                            .otherwise({
+                                templateUrl:'pages/home.html'
+                            })
+                    $locationProvider.html5Mode(true);
                 });
+
         </script>
     </body>
 </html>
