@@ -1,43 +1,123 @@
-<!doctype html>
-<html lang="en" ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>My App</title>  
-  
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
-  <link rel="stylesheet" href="lib/onsen/css/topcoat-mobile-onsen-ios7.css">  
-  <link rel="stylesheet" href="styles/app.css"/>
+<!DOCTYPE html>
+<html ng-app='passport'>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Passport</title>
+        <style>
+            .skillIcon{
+                width:128px;
+                height:128px;
+            }
+            .skillName{
 
-  <script src="lib/onsen/js/angular/angular.js"></script>    
-  <script src="lib/onsen/js/onsenui.js"></script>    
-  <script src="js/app.js"></script> 
-  
-</head>
+            }
+            .skillDescription{
 
-<body>    
-  
-  <ons-screen>
+            }
+            .footer {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+            }
+            .passportControls{
+                background-color: #F8F8F8;
+                border-top: 1px solid #DDDDDD;
+                height: 49px;
+                width: 100%;
+                position:absolute;
+                bottom:0px;
+                left: 0;
+            }
+            .header{
+                background-color:royalblue;
+            }
+            .mainContent{
+                overflow:hidden;
+            }
+        </style>
+    </head>
+    <body ng-controller='passportCtrl'>
+        <div class='header'></div>
+        <!-- <div ng-view class='mainContent'></div> -->
+        <div ng-repeat="skill in serverResponse">
+            <table>
+                <tr>
+                    <td rowspan='2'><img class='skillIcon' src='img/iblank.png'/></td>
+                    <td class='skillName'>{{skill.name}}</td>
+                </tr>
+                <tr>
+                    <td><span ng-show='user.info.admin'>edit skill</span> <span>Started</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class='passportControls'>
+              controls
+        </div>
 
-    <ons-tabbar>
-      <ons-tabbar-item
-              active="true"
-              label="Home"
-              icon="home"
-              page="navigator1.html"></ons-tabbar-item>
+        <!-- All needed Scripts -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script type="text/javascript">
+            angular.module('passport',['ngRoute'])
+                .controller('passportCtrl', function($scope, $http){
+                        $scope.deviceReady=false;
+                        $scope.serviceResponse={};
+                        $scope.user={username:'greeneyedevil',password:'test'};
+                        $scope.user.info={}
+                        $scope.urlBase='http://passport-api.herokuapp.com'
+                        //http://passport-api.herokuapp.com/user?username=greeneyedevil&password=test
+                        //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
 
-      <ons-tabbar-item
-          label="Camera"
-              icon="camera"
-              page="page2.html"></ons-tabbar-item>
+                        $http({ method:'GET',
 
-      <ons-tabbar-item
-          label="Settings"
-              icon="gear"
-              page="page3.html"></ons-tabbar-item>
-    </ons-tabbar>
-    
-  </ons-screen>
- 
-</body>
+                            url:$scope.urlBase+'/user?username='+$scope.user.username+'&password='+$scope.user.password
+                        })
+                        .success(function(results, status, headers, config) {
+                                    console.log('success user');
+                                    $scope.user.info = results[0];
+                        }).error(function(results, status) {
+                                    // called asynchronously if server returns response with error status.
+                                    console.log('error user');
+                                });
+                        $http({ method:'GET',
+                            //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
+                            url:$scope.urlBase+'/skillList?username='+$scope.user.username+'&password='+$scope.user.password
+                        })
+                        .success(function(results, status, headers, config) {
+                            console.log('success skilllist');
+                            $scope.serverResponse = results;
+                        }).error(function(results, status) {
+                            // called asynchronously if server returns response with error status.
+                                    console.log('error skilllist'+results);
+                        });
+                        /*
+                        $http.get('http://passport-api.herokuapp.com/users')
+                            .success(function(results, status, headers, config) {
+                                $scope.serverResponse = results;
+                            }).error(function(results, status) {
+                                // called asynchronously if server returns response with error status.
+                                $scope.serverResponse = results;
+                            });
+                        */
+                })
+                .config(function($routeProvider,$locationProvider){
+                    $routeProvider
+                            .when('/index.html',{
+                                templateUrl:'pages/home.html'
+                            })
+                            .when('/skill.html',{
+                                templateUrl:'pages/skill.html'
+                            })
+                            .otherwise({
+                                templateUrl:'pages/home.html'
+                            })
+                    //$locationProvider.html5Mode(true);
+                });
+        </script>
+    </body>
 </html>
