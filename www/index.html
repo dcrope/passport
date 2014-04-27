@@ -19,13 +19,13 @@
             }
             .passportControls{
                 position:absolute;
-                height:20px;
+                height:40px;
                 width:100%;
                 background-color:black;
                 bottom:0px;
             }
             .header{
-
+                background-color:royalblue;
             }
             .mainContent{
                 overflow:hidden;
@@ -33,7 +33,7 @@
         </style>
     </head>
     <body ng-controller='passportCtrl'>
-        <div class='header'>header</div>
+        <div class='header'>Welcome {{user.info.username}}</div>
         <!-- <div ng-view class='mainContent'></div> -->
         <div ng-repeat="skill in serverResponse">
             <table>
@@ -61,27 +61,31 @@
                         $scope.serviceResponse={};
                         $scope.user={username:'greeneyedevil',password:'test'};
                         $scope.user.info={}
-
+                        $scope.urlBase='http://passport-api.herokuapp.com'
+                        //http://passport-api.herokuapp.com/user?username=greeneyedevil&password=test
+                        //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
 
                         $http({ method:'GET',
-                            //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
-                            url:'http://localhost:3000/user?username='+$scope.user.username+'&password='+$scope.user.password
+
+                            url:$scope.urlBase+'/user?username='+$scope.user.username+'&password='+$scope.user.password
                         })
                         .success(function(results, status, headers, config) {
+                                    console.log('success user');
                                     $scope.user.info = results[0];
                         }).error(function(results, status) {
                                     // called asynchronously if server returns response with error status.
-
+                                    console.log('error user');
                                 });
                         $http({ method:'GET',
                             //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
-                            url:'http://localhost:3000/skillList?username='+$scope.user.username+'&password='+$scope.user.password
+                            url:$scope.urlBase+'/skillList?username='+$scope.user.username+'&password='+$scope.user.password
                         })
                         .success(function(results, status, headers, config) {
+                            console.log('success skilllist');
                             $scope.serverResponse = results;
                         }).error(function(results, status) {
                             // called asynchronously if server returns response with error status.
-                            $scope.serverResponse = results;
+                                    console.log('error skilllist'+results);
                         });
                         /*
                         $http.get('http://passport-api.herokuapp.com/users')
@@ -93,7 +97,6 @@
                             });
                         */
                 })
-                    /*
                 .config(function($routeProvider,$locationProvider){
                     $routeProvider
                             .when('/index.html',{
@@ -107,7 +110,6 @@
                             })
                     //$locationProvider.html5Mode(true);
                 });
-                */
         </script>
     </body>
 </html>
