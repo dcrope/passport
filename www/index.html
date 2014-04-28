@@ -5,8 +5,10 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/topcoat.css" />
         <title>Passport</title>
+        <!--
         <style>
             .skillIcon{
                 width:128px;
@@ -18,19 +20,12 @@
             .skillDescription{
 
             }
-            .footer {
-                bottom: 0;
-                left: 0;
-                position: absolute;
-            }
             .passportControls{
-                background-color: #F8F8F8;
-                border-top: 1px solid #DDDDDD;
-                height: 49px;
-                width: 100%;
                 position:absolute;
+                height:40px;
+                width:100%;
+                background-color:black;
                 bottom:0px;
-                left: 0;
             }
             .header{
                 background-color:royalblue;
@@ -39,29 +34,63 @@
                 overflow:hidden;
             }
         </style>
+        -->
     </head>
     <body ng-controller='passportCtrl'>
-        <div class='header'></div>
+        <!--<div class='header'>Welcome {{user.info.username}}</div> -->
         <!-- <div ng-view class='mainContent'></div> -->
-        <div ng-repeat="skill in serverResponse">
-            <table>
-                <tr>
-                    <td rowspan='2'><img class='skillIcon' src='img/iblank.png'/></td>
-                    <td class='skillName'>{{skill.name}}</td>
-                </tr>
-                <tr>
-                    <td><span ng-show='user.info.admin'>edit skill</span> <span>Started</span></td>
-                </tr>
-            </table>
-        </div>
-        <div class='passportControls'>
-              controls
-        </div>
+        <div id="wrapper">
+            <div class="max-width">
+                <div id="sideNav">
+                    <nav class="site">
+                        <ul>
+                            <li><a href="http://www.dcrope.com">DC Rope Website</a></li>
+                        </ul>
+                    </nav>
+                    <div id="pageNav">
+                        <ul>
+                            <li><a href="#button-bar">Your Skills</a></li>
+                            <li><a href="#large-buttonbar">Add a skill</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="site">
+                <header id="main-header">
+                    <div class="max-width">
+                        <hgroup>
+                            <h1><a href="http://topcoat.io">Passport</a></h1>
+                            <p>Helping you track you pedigree</p>
+                        </hgroup>
+                        <nav>
+                            <ul>
+                                <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
+                                <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
+                                <li><a href="http://topcoat.io/blog">Blog</a></li>
+                                <li><a id="download-btn" href="https://github.com/topcoat/topcoat/archive/v0.8.0.zip" onclick="_gaq.push(['_trackEvent', 'download', 'click',,, false]);">Download</a></li>
+                            </ul>
+                        </nav><a id="slide-menu-button" class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
+                    </div>
+                </header>
+                <div class="topcoat-list">
+                    <h3 class="topcoat-list__header">Skills</h3>
+                    <ul class="topcoat-list__container">
+                        <li ng-repeat="skill in serverResponse" class="topcoat-list__item">
+                            {{skill.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class='passportControls'>
 
+                </div>
+            </div>
+        </div>
         <!-- All needed Scripts -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script src="js/rainbow-custom.min.js"></script>
+        <script src="js/main.js"></script>
         <script type="text/javascript">
             angular.module('passport',['ngRoute'])
                 .controller('passportCtrl', function($scope, $http){
@@ -104,7 +133,8 @@
                                 $scope.serverResponse = results;
                             });
                         */
-                })
+                });
+            /*
                 .config(function($routeProvider,$locationProvider){
                     $routeProvider
                             .when('/index.html',{
@@ -118,6 +148,7 @@
                             })
                     //$locationProvider.html5Mode(true);
                 });
+            */
         </script>
     </body>
 </html>
