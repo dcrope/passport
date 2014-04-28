@@ -62,14 +62,7 @@
                             <h1><a href="http://topcoat.io">Passport</a></h1>
                             <p>Helping you track you pedigree</p>
                         </hgroup>
-                        <nav>
-                            <ul>
-                                <li class="selected"><a href="http://topcoat.io/topcoat">Demo</a></li>
-                                <li><a href="http://bench.topcoat.io/">Benchmarks</a></li>
-                                <li><a href="http://topcoat.io/blog">Blog</a></li>
-                                <li><a id="download-btn" href="https://github.com/topcoat/topcoat/archive/v0.8.0.zip" onclick="_gaq.push(['_trackEvent', 'download', 'click',,, false]);">Download</a></li>
-                            </ul>
-                        </nav><a id="slide-menu-button" class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
+                        <a id="slide-menu-button" ng-click='openNav()' class="topcoat-icon-button--large--quiet"><span class="topcoat-icon--large topcoat-icon--menu-stack"></span></a>
                     </div>
                 </header>
                 <div class="topcoat-list">
@@ -89,8 +82,10 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <!--
         <script src="js/rainbow-custom.min.js"></script>
         <script src="js/main.js"></script>
+        -->
         <script type="text/javascript">
             angular.module('passport',['ngRoute'])
                 .controller('passportCtrl', function($scope, $http){
@@ -101,6 +96,23 @@
                         $scope.urlBase='http://passport-api.herokuapp.com'
                         //http://passport-api.herokuapp.com/user?username=greeneyedevil&password=test
                         //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
+                        /*
+                        var site = document.getElementById('site');
+                        var cl = site.classList;
+                        if (cl.contains('open')) {
+                            cl.remove('open');
+                        }
+                        */
+
+                        $scope.openNav = function(){
+                            var nav =document.getElementById('site');
+                            var cl = nav.classList;
+                            if (cl.contains('open')) {
+                                cl.remove('open');
+                            } else {
+                                cl.add('open');
+                            }
+                        };
 
                         $http({ method:'GET',
 
