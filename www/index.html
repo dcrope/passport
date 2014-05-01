@@ -75,7 +75,7 @@
                             <p>Helping you track you pedigree</p>
                         </hgroup>
 
-                        <a id="slide-menu-button" onclick='openNav()'><img style='width:50px;height:50px;' src='img/threelines.png'/></a>
+                        <a id="slide-menu-button"><img style='width:50px;height:50px;' src='img/threelines.png'/></a>
                     </div>
                 </header>
                 <div class="topcoat-list">
@@ -109,13 +109,17 @@
                         $scope.urlBase='http://passport-api.herokuapp.com'
                         //http://passport-api.herokuapp.com/user?username=greeneyedevil&password=test
                         //http://localhost:3000/skillList?username=greeneyedevil&password=test&skillName=Overhand%20Knot&skillDescription=Basic%20Knot
-                        /*
-                        var site = document.getElementById('site');
-                        var cl = site.classList;
-                        if (cl.contains('open')) {
-                            cl.remove('open');
-                        }
-                        */
+
+                        var site = document.getElementById('slide-menu-button');
+                        site.addEventListener('touchstart', function(e){
+                            var cl = site.classList;
+                            if (cl.contains('open')) {
+                                cl.remove('open');
+                            } else {
+                                cl.add('open');
+                            }
+                        })
+
 
 
                         $http({ method:'GET',
